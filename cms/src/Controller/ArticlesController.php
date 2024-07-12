@@ -49,6 +49,7 @@ class ArticlesController extends AppController
             ->findBySlug($slug)
             ->contain('Tags')
             ->firstOrFail();
+
         if ($this->request->is(['post', 'put'])) {
             $this->Articles->patchEntity($article, $this->request->getData());
             if ($this->Articles->save($article)) {
@@ -60,8 +61,8 @@ class ArticlesController extends AppController
         }
         $tags = $this->Articles->Tags->find('list')->all();
 
-        $this->set('tags', $tags);
         $this->set('article', $article);
+        $this->set('tags', $tags);
     }
 
     public function delete($slug)

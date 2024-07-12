@@ -21,12 +21,12 @@ class ArticlesTable extends Table
 
     public function beforeSave(EventInterface $event, $entity, $options)
     {
+        if ($entity->tag_string) {
+            $entity->tags = $this->_buildTags($entity->tag_string);
+        }
         if ($entity->isNew() && !$entity->slug) {
             $sluggedTitle = Text::slug($entity->title);
             $entity->slug = substr($sluggedTitle, 0, 191);
-        }
-        if ($entity->tag_string) {
-            $entity->tags = $this->_buildTags($entity->tag_string);
         }
     }
 
@@ -37,9 +37,9 @@ class ArticlesTable extends Table
         $newTags = array_unique($newTags);
 
         $out = [];
-        $query = $this->Tags->find()->where(['Tags.title IN' => $newTags]);
+        $query = $this->Tags->find()
+            ->where(['Tags.title IN' => $newTags]);
 
-        var_dump($query);
         foreach ($query->extract('title') as $existing) {
             $index = array_search($existing, $newTags);
             if ($index !== false) {
