@@ -11,7 +11,7 @@ class ArticlesTable extends Table
 {
     public function initialize(array $config) : void
     {
-        //parent::initialize($config);
+        parent::initialize($config);
         $this->addBehavior('Timestamp');
         $this->belongsToMany('Tags', [
             'joinTable' => 'articles_tags',
@@ -37,8 +37,7 @@ class ArticlesTable extends Table
         $newTags = array_unique($newTags);
 
         $out = [];
-        $query = $this->Tags->find()
-            ->where(['Tags.title IN' => $newTags]);
+        $query = $this->Tags->find()->where(['Tags.title IN' => $newTags]);
 
         foreach ($query->extract('title') as $existing) {
             $index = array_search($existing, $newTags);

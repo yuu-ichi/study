@@ -11,3 +11,7 @@
 ## using
 
 - mysql:5.7
+
+## composer
+
+- 関連パッケージ:`composer suggests`
