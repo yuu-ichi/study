@@ -46,4 +46,10 @@ class AppController extends Controller
         $this->loadComponent('Flash');
         $this->loadComponent('Authentication.Authentication');
     }
+
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        $this->Authentication->addUnauthenticatedActions(['index', 'view']);
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 use App\Controller\AppController;
+use App\Model\Entity\User;
 
 class ArticlesController extends AppController
 {
@@ -29,8 +30,8 @@ class ArticlesController extends AppController
         $article = $this->Articles->newEmptyEntity();
         if ($this->request->is('post')) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
-
-            $article->user_id = 1; // TODO: user
+            $user = $this->Authentication->getIdentity();
+            $article->user_id = $user->id;
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('Your article has been saved.'));
 

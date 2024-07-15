@@ -13,7 +13,7 @@ class UsersController extends AppController
     public function beforeFilter(\Cake\Event\EventInterface $event)
     {
         parent::beforeFilter($event);
-        $this->Authentication->addUnauthenticatedActions(['login']);
+        $this->Authentication->addUnauthenticatedActions(['login', 'add']);
     }
 
     public function login()
@@ -31,6 +31,16 @@ class UsersController extends AppController
             $this->Flash->error(__('Invalid username or password'));
         }
     }
+
+    public function logout()
+    {
+        $result = $this->Authentication->getResult();
+        if ($result && $result->isValid()) {
+            $this->Authentication->logout();
+            return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+        }
+    }
+
     /**
      * Index method
      *
