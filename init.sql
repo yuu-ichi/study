@@ -48,3 +48,9 @@ VALUES
 /* others */
 SET foreign_key_checks = 0;
 SET foreign_key_checks = 1;
+
+/* all truncte sql */
+TRUNCATE users;
+TRUNCATE articles;
+TRUNCATE articles_tags;
+TRUNCATE tags;
