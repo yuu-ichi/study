@@ -39,8 +39,8 @@ class ArticlesTable extends Table
         $out = [];
         $query = $this->Tags->find()->where(['Tags.title IN' => $newTags]);
 
-        foreach ($query->extract('title') as $existing) {
-            $index = array_search($existing, $newTags);
+        foreach ($query->all() as $tag) {
+            $index = array_search($tag->title, $newTags);
             if ($index !== false) {
                 unset($newTags[$index]);
             }
