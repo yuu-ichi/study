@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 use App\Controller\AppController;
-use App\Model\Entity\User;
 
 class ArticlesController extends AppController
 {
@@ -12,12 +11,15 @@ class ArticlesController extends AppController
 
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $articles = $this->paginate($this->Articles);
         $this->set(compact('articles'));
     }
 
     public function view($slug = null)
     {
+        $this->Authorization->skipAuthorization();
+
         $article = $this->Articles
             ->findBySlug($slug)
             ->contain('Tags')
@@ -29,10 +31,11 @@ class ArticlesController extends AppController
     {
         $article = $this->Articles->newEmptyEntity();
         $this->Authorization->authorize($article);
+
         if ($this->request->is('post')) {
             $article = $this->Articles->patchEntity($article, $this->request->getData());
-            $user = $this->Authentication->getIdentity();
-            $article->user_id = $user->id;
+            $article->user_id = $this->request->getAttribute('identity')->getIdentifier();
+
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('Your article has been saved.'));
 
@@ -41,8 +44,7 @@ class ArticlesController extends AppController
             $this->Flash->error(__('Unable to add your article.'));
         }
         $tags = $this->Articles->Tags->find('list')->all();
-        $this->set('tags', $tags);
-        $this->set('article', $article);
+        $this->set(compact('article', 'tags'));
     }
 
     public function edit($slug)
@@ -52,8 +54,11 @@ class ArticlesController extends AppController
             ->contain('Tags')
             ->firstOrFail();
         $this->Authorization->authorize($article);
+
         if ($this->request->is(['post', 'put'])) {
-            $this->Articles->patchEntity($article, $this->request->getData());
+            $this->Articles->patchEntity($article, $this->request->getData(), [
+                'accessibleFields' => ['user_id' => false]
+            ]);
             if ($this->Articles->save($article)) {
                 $this->Flash->success(__('Your article has been updated.'));
 
@@ -62,9 +67,7 @@ class ArticlesController extends AppController
             $this->Flash->error(__('Unable to update your article.'));
         }
         $tags = $this->Articles->Tags->find('list')->all();
-
-        $this->set('article', $article);
-        $this->set('tags', $tags);
+        $this->set(compact('article', 'tags'));
     }
 
     public function delete($slug)
@@ -82,6 +85,7 @@ class ArticlesController extends AppController
 
     public function tags()
     {
+        $this->Authorization->skipAuthorization();
         $tags = $this->request->getParam('pass');
         $articles = $this->Articles->find('tagged', [
             'tags' => $tags

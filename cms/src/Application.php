@@ -103,19 +103,17 @@ class Application extends BaseApplication
             // caching in production could improve performance.
             // See https://github.com/CakeDC/cakephp-cached-routing
             ->add(new RoutingMiddleware($this))
-            ->add(new AuthenticationMiddleware($this))
-            ->add(new AuthorizationMiddleware($this))
             // Parse various types of encoded request bodies so that they are
             // available as array through $request->getData()
             // https://book.cakephp.org/4/en/controllers/middleware.html#body-parser-middleware
             ->add(new BodyParserMiddleware())
-
             // Cross Site Request Forgery (CSRF) Protection Middleware
             // https://book.cakephp.org/4/en/security/csrf.html#cross-site-request-forgery-csrf-middleware
             ->add(new CsrfProtectionMiddleware([
                 'httponly' => true,
-            ]));
-
+            ]))
+            ->add(new AuthenticationMiddleware($this))
+            ->add(new AuthorizationMiddleware($this));
         return $middlewareQueue;
     }
 
