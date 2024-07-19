@@ -14,6 +14,7 @@ class TagPolicy
     // TODO: role admin user
     protected function isAuthor(Identity $user, Tag $tag)
     {
+        // TODO:
         return $tag->user_id === $user->getIdentifier();
     }
     /**
@@ -25,6 +26,7 @@ class TagPolicy
      */
     public function canAdd(Identity $user, Tag $tag)
     {
+        return true; // TODO:
     }
 
     /**
@@ -36,6 +38,7 @@ class TagPolicy
      */
     public function canEdit(Identity $user, Tag $tag)
     {
+        return true; // TODO:
     }
 
     /**
@@ -47,7 +50,7 @@ class TagPolicy
      */
     public function canDelete(Identity $user, Tag $tag)
     {
-        return false;
+        return true; // TODO:
     }
 
     /**
