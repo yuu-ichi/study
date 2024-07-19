@@ -2,7 +2,10 @@
 declare(strict_types=1);
 
 namespace App\Model\Entity;
+
+use ArrayAccess;
 use Authentication\PasswordHasher\DefaultPasswordHasher;
+use Authentication\IdentityInterface;
 use Cake\ORM\Entity;
 
 /**
@@ -16,7 +19,7 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\Article[] $articles
  */
-class User extends Entity
+class User extends Entity implements IdentityInterface
 {
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
@@ -50,5 +53,19 @@ class User extends Entity
             return (new DefaultPasswordHasher())->hash($password);
         }
         return null;
+    }
+    /**
+     * Authentication\IdentityInterface method
+     */
+    public function getIdentifier(): int
+    {
+        return $this->id;
+    }
+    /**
+     * Authentication\IdentityInterface method
+     */
+    public function getOriginalData(): ArrayAccess
+    {
+        return $this;
     }
 }
