@@ -2,7 +2,10 @@
 declare(strict_types=1);
 
 namespace App\Model\Entity;
+
+use ArrayAccess;
 use Authentication\PasswordHasher\DefaultPasswordHasher;
+use Authentication\IdentityInterface;
 use Cake\ORM\Entity;
 
 /**
@@ -16,8 +19,12 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\Article[] $articles
  */
-class User extends Entity
+class User extends Entity implements IdentityInterface
 {
+
+    const ROLE_ADMIN = 'admin';
+    const ROLE_USER = 'user';
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -32,6 +39,7 @@ class User extends Entity
         'password' => true,
         'created' => true,
         'modified' => true,
+        'role' => true,
         'articles' => true,
     ];
 
@@ -50,5 +58,25 @@ class User extends Entity
             return (new DefaultPasswordHasher())->hash($password);
         }
         return null;
+    }
+
+    protected function _getIsAdmin()
+    {
+        return $this->role === self::ROLE_ADMIN;
+    }
+
+    /**
+     * Authentication\IdentityInterface method
+     */
+    public function getIdentifier(): int
+    {
+        return $this->id;
+    }
+    /**
+     * Authentication\IdentityInterface method
+     */
+    public function getOriginalData(): ArrayAccess
+    {
+        return $this;
     }
 }

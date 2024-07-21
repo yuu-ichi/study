@@ -18,7 +18,9 @@ class UsersController extends AppController
 
     public function login()
     {
+        $this->Authorization->skipAuthorization();
         $this->request->allowMethod(['get', 'post']);
+        
         $result = $this->Authentication->getResult();
         if ($result && $result->isValid()) {
             $redirect = $this->request->getQuery('redirect', [
@@ -30,11 +32,15 @@ class UsersController extends AppController
         if ($this->request->is('post') && !$result->isValid()) {
             $this->Flash->error(__('Invalid username or password'));
         }
+        
     }
 
     public function logout()
     {
+        $this->Authorization->skipAuthorization();
+
         $result = $this->Authentication->getResult();
+
         if ($result && $result->isValid()) {
             $this->Authentication->logout();
             return $this->redirect(['controller' => 'Users', 'action' => 'login']);
@@ -48,6 +54,7 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->Authorization->skipAuthorization();
         $query = $this->Users->find();
         $users = $this->paginate($query);
 
@@ -63,6 +70,7 @@ class UsersController extends AppController
      */
     public function view($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $user = $this->Users->get($id, contain: ['Articles']);
         $this->set(compact('user'));
     }
@@ -74,6 +82,7 @@ class UsersController extends AppController
      */
     public function add()
     {
+        $this->Authorization->skipAuthorization();
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -96,6 +105,7 @@ class UsersController extends AppController
      */
     public function edit($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $user = $this->Users->get($id, contain: []);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -118,6 +128,7 @@ class UsersController extends AppController
      */
     public function delete($id = null)
     {
+        $this->Authorization->skipAuthorization();
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Users->get($id);
         if ($this->Users->delete($user)) {

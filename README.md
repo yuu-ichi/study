@@ -10,11 +10,33 @@
 
 ## step2
 
-- [ ] 記事とタグの紐付けを画面から行うことができるようにする
+- [x] 記事とタグの紐付けを画面から行うことができるようにする
+- [x] ログインユーザー
+- [x] ポリシーでユーザーの ID マッチしたデータのみ編集・削除
+- [x] タグは管理者のみ追加・編集・削除
+
+## step3
+
+- [ ] トップページ編集
 
 ## using
 
 - mysql:5.7
+
+## migration
+
+- make migration
+
+```sh
+bin/cake  migration ClassName
+```
+
+- often used
+
+```sh
+bin/cake migrations status
+bin/cake migrations migrate
+```
 
 ## composer
 
