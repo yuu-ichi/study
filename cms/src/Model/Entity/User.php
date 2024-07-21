@@ -21,6 +21,10 @@ use Cake\ORM\Entity;
  */
 class User extends Entity implements IdentityInterface
 {
+
+    const ROLE_ADMIN = 'admin';
+    const ROLE_USER = 'user';
+
     /**
      * Fields that can be mass assigned using newEntity() or patchEntity().
      *
@@ -55,6 +59,12 @@ class User extends Entity implements IdentityInterface
         }
         return null;
     }
+
+    protected function _getIsAdmin()
+    {
+        return $this->role === self::ROLE_ADMIN;
+    }
+
     /**
      * Authentication\IdentityInterface method
      */

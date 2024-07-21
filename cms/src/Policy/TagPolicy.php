@@ -11,12 +11,11 @@ use Authorization\Identity;
  */
 class TagPolicy
 {
-    // TODO: role admin user
-    protected function isAuthor(Identity $user, Tag $tag)
+    private function isAdmin(Identity $user)
     {
-        // TODO:
-        return $tag->user_id === $user->getIdentifier();
+        return $user->is_admin;
     }
+
     /**
      * Check if $user can add Tag
      *
@@ -26,7 +25,7 @@ class TagPolicy
      */
     public function canAdd(Identity $user, Tag $tag)
     {
-        return true; // TODO:
+        return $this->isAdmin($user);
     }
 
     /**
@@ -38,7 +37,7 @@ class TagPolicy
      */
     public function canEdit(Identity $user, Tag $tag)
     {
-        return true; // TODO:
+        return $this->isAdmin($user);
     }
 
     /**
@@ -50,7 +49,7 @@ class TagPolicy
      */
     public function canDelete(Identity $user, Tag $tag)
     {
-        return true; // TODO:
+        return $this->isAdmin($user);
     }
 
     /**
@@ -62,5 +61,6 @@ class TagPolicy
      */
     public function canView(Identity $user, Tag $tag)
     {
+        return true;
     }
 }
