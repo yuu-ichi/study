@@ -35,6 +35,7 @@ class User extends Entity implements IdentityInterface
         'password' => true,
         'created' => true,
         'modified' => true,
+        'role' => true,
         'articles' => true,
     ];
 

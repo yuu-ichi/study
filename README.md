@@ -18,6 +18,21 @@
 
 - mysql:5.7
 
+## migration
+
+- make migration
+
+```sh
+bin/cake  migration ClassName
+```
+
+- often used
+
+```sh
+bin/cake migrations status
+bin/cake migrations migrate
+```
+
 ## composer
 
 - 関連パッケージ:`composer suggests`
