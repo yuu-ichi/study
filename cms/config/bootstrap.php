@@ -192,6 +192,7 @@ ServerRequest::addDetector('tablet', function ($request) {
     return $detector->isTablet();
 });
 
+
 /*
  * You can enable default locale format parsing by adding calls
  * to `useLocaleParser()`. This enables the automatic conversion of

@@ -21,7 +21,9 @@
 
 ## using
 
-- mysql:5.7
+- mysql: 5.7
+- node: v18.19.0
+- css: [bootstrap](https://getbootstrap.jp/)
 
 ## migration
 
