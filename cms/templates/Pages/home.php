@@ -32,8 +32,8 @@ $this->disableAutoLayout();
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        <a class="nav-link" href="localhost/articles">Articles</a>
-                        <a class="nav-link" href="localhost/tags">Tags</a>
+                        <a class="nav-link" href="/articles">Articles</a>
+                        <a class="nav-link" href="/tags">Tags</a>
                     </div>
                     </div>
                 </div>
