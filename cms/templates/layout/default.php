@@ -18,32 +18,42 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page" href="/">
-                                <i class="bi bi-house"></i>
-                                Home
+                                <button type="button" class="btn btn-outline-primary item-button">
+                                    <i class="bi bi-house"></i>
+                                    Home
+                                </button>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center gap-2" href="/articles">
-                                <i class="bi bi-pencil-square"></i>
-                                Articles
+                                <button type="button" class="btn btn-outline-primary item-button">
+                                    <i class="bi bi-pencil-square"></i>
+                                    Articles
+                                </button>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center gap-2" href="/tags">
-                                <i class="bi bi-tag"></i>
-                                Tags
+                                <button type="button" class="btn btn-outline-primary item-button">
+                                    <i class="bi bi-tag"></i>
+                                    Tags
+                                </button>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center gap-2" href="/users/login">
-                                <i class="bi bi-box-arrow-left"></i>
-                                Login
+                                <button type="button" class="btn btn-outline-primary item-button">
+                                    <i class="bi bi-box-arrow-left"></i>
+                                    Login
+                                </button>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center gap-2" href="/users/logout">
-                                <i class="bi bi-box-arrow-right"></i>
-                                Logout
+                                <button type="button" class="btn btn-outline-primary item-button">
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    Logout
+                                </button>
                             </a>
                         </li>
                     </ul>
