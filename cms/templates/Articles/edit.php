@@ -1,7 +1,7 @@
 <?php
   $this->layout = 'default';
 ?>
-<h1>記事の編集</h1>
+<?php echo $this->element('hedding', ["text" => "記事の編集"]); ?>
 <?php
     echo $this->Form->create($article);
     echo $this->Form->control('user_id', ['type' => 'hidden']);

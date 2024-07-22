@@ -1,6 +1,7 @@
 <?php
   $this->layout = 'default';
 ?>
+<?php echo $this->element('hedding', ["text" => "ログイン"]); ?>
 <div class="users form">
     <?= $this->Flash->render() ?>
     <h3>Login</h3>

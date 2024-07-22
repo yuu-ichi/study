@@ -1,13 +1,15 @@
 <?php
   $this->layout = 'default';
 ?>
-<div class="tags index content">
-    <?= $this->Html->link(__('New Tag'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Tags') ?></h3>
-    <div class="table-responsive">
-        <table>
+<div class="">
+    <?php echo $this->element('hedding', ["text" => "タグの一覧"]); ?>
+    <p>
+        <?= $this->Html->link(__('New Tag'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+    </p>
+    <div class="">
+        <table class="table table-hover">
             <thead>
-                <tr>
+                <tr class="table table-primary">
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('title') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
@@ -17,7 +19,7 @@
             </thead>
             <tbody>
                 <?php foreach ($tags as $tag): ?>
-                <tr>
+                <tr class="table">
                     <td><?= $this->Number->format($tag->id) ?></td>
                     <td><?= h($tag->title) ?></td>
                     <td><?= h($tag->created) ?></td>
