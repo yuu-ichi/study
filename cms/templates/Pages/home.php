@@ -19,6 +19,7 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Http\Exception\NotFoundException;
+use Cake\Datasource\Exception\MissingDatasourceConfigException;
 
 $this->disableAutoLayout();
 
@@ -29,7 +30,7 @@ $checkConnection = function (string $name) {
         ConnectionManager::get($name)->getDriver()->connect();
         // No exception means success
         $connected = true;
-    } catch (Exception $connectionError) {
+    } catch (MissingDatasourceConfigException $connectionError) {
         $error = $connectionError->getMessage();
         if (method_exists($connectionError, 'getAttributes')) {
             $attributes = $connectionError->getAttributes();
@@ -58,7 +59,7 @@ endif;
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
