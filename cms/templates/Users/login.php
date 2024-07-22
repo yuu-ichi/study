@@ -1,3 +1,6 @@
+<?php
+  $this->layout = 'default';
+?>
 <div class="users form">
     <?= $this->Flash->render() ?>
     <h3>Login</h3>

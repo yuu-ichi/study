@@ -1,9 +1,5 @@
 <?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Tag $tag
- * @var string[]|\Cake\Collection\CollectionInterface $articles
- */
+  $this->layout = 'default';
 ?>
 <div class="row">
     <aside class="column">

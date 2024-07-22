@@ -1,8 +1,5 @@
 <?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Tag $tag
- */
+  $this->layout = 'default';
 ?>
 <div class="row">
     <aside class="column">

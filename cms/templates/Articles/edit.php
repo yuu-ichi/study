@@ -1,3 +1,6 @@
+<?php
+  $this->layout = 'default';
+?>
 <h1>記事の編集</h1>
 <?php
     echo $this->Form->create($article);

@@ -1,3 +1,6 @@
+<?php
+  $this->layout = 'default';
+?>
 <h1>記事一覧</h1>
 <p><?= $this->Html->link("記事の追加", ['action' => 'add']) ?></p>
 <table>

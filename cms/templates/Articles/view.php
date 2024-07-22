@@ -1,5 +1,6 @@
-<!-- File: templates/Articles/view.php -->
-
+<?php
+  $this->layout = 'default';
+?>
 <h1><?= h($article->title) ?></h1>
 <p><?= h($article->body) ?></p>
 <p>
