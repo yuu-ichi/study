@@ -1,0 +1,21 @@
+.users-fields {
+    padding-left: 4px;
+}
+.users-fieldset {
+    padding-left: 0px;
+}
+.users-input {
+    padding-left: 4px;
+}
+.users-action-buttons {
+    display: flow;
+    text-align: right;
+}
+.users-action-login {
+    width: 16rem;
+    margin: 1rem;
+}
+.users-action-add-user {
+    width: 16rem;
+    margin: 1rem;
+}

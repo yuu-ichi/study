@@ -9,5 +9,5 @@
     <?= $this->Html->css('BootstrapUI.bootstrap.min') ?>
     <?= $this->Html->css(['BootstrapUI./font/bootstrap-icons', 'BootstrapUI./font/bootstrap-icon-sizes']) ?>
     <?= $this->Html->script(['BootstrapUI.popper.min', 'BootstrapUI.bootstrap.min']) ?>
-    <?= $this->Html->css(['normalize.min', 'fonts', 'cake', 'main', 'home']) ?>
+    <?= $this->Html->css(['normalize.min', 'fonts', 'main', 'home']) ?>
 </head>

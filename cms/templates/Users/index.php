@@ -3,12 +3,14 @@
 ?>
 <?php echo $this->element('hedding', ["text" => "ユーザーの一覧"]); ?>
 <div class="users index content">
-    <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+<p>
+    <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+</p>
     <h3><?= __('Users') ?></h3>
     <div class="table-responsive">
-        <table>
+        <table class="table table-hover">
             <thead>
-                <tr>
+                <tr class="table table-primary">
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('email') ?></th>
                     <th><?= $this->Paginator->sort('created') ?></th>
@@ -18,7 +20,7 @@
             </thead>
             <tbody>
                 <?php foreach ($users as $user): ?>
-                <tr>
+                <tr class="table">
                     <td><?= $this->Number->format($user->id) ?></td>
                     <td><?= h($user->email) ?></td>
                     <td><?= h($user->created) ?></td>
