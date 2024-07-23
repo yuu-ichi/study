@@ -44,3 +44,11 @@ bin/cake migrations migrate
 ## composer
 
 - 関連パッケージ:`composer suggests`
+
+## roleup
+
+- [rollupjs](https://rollupjs.org/)
+
+```sh
+npm run build
+```

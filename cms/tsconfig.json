@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "esnext",
+        "rootDir": "./resources",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "outDir": "./webroot/dist",
+        "strict": true,
+        "skipLibCheck": true
+    },
+    "include": ["resources/**/*"]
+}

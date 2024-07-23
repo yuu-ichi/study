@@ -65,5 +65,6 @@
         </main>
     </div>
 </div>
+<?= $this->fetch('vite') ?>
 </body>
 </html>
