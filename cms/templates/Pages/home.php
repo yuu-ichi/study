@@ -16,81 +16,42 @@
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col">
       <div class="card">
-        <?php echo $this->Html->image('home-1.jpg', ['alt' => '1', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
+        <?php echo $this->Html->image('home/coding.jpg', ['alt' => 'プログラミング', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <h5 class="card-title">プログラミング</h5>
+          <p class="card-text">TODO</p>
           <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <?php echo $this->Html->image('home-2.jpg', ['alt' => '2', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
+        <?php echo $this->Html->image('home/hobby.jpg', ['alt' => '趣味', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <h5 class="card-title">趣味</h5>
+          <p class="card-text">TODO</p>
           <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <?php echo $this->Html->image('home-3.jpg', ['alt' => '3', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
+        <?php echo $this->Html->image('home/idea-talk.jpg', ['alt' => '雑談', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <h5 class="card-title">雑談</h5>
+          <p class="card-text">TODO</p>
           <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
         </div>
       </div>
     </div>
     <div class="col">
       <div class="card">
-        <?php echo $this->Html->image('home-3.jpg', ['alt' => '3', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
+        <?php echo $this->Html->image('home/running.jpg', ['alt' => 'ランニング', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover; object-position: 0% 80%;']); ?>
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <h5 class="card-title">運動</h5>
+          <p class="card-text">TODO</p>
           <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container px-4 py-5" id="featured-3">
-    <h2 class="border-bottom">作成中</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#collection"/></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">記事作成</h3>
-        <p>記事の作成...</p>
-        <a href="#" class="icon-link">
-          to Articles
-          <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#people-circle"/></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">タグの追加</h3>
-        <p>タグの作成....</p>
-        <a href="#" class="icon-link">
-          to Tags
-          <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-        </a>
-      </div>
-      <div class="feature col">
-        <div class="feature-icon d-inline-flex align-items-center justify-content-center text-bg-primary bg-gradient fs-2 mb-3">
-          <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"/></svg>
-        </div>
-        <h3 class="fs-2 text-body-emphasis">作成中....</h3>
-        <p>作成中...</p>
-        <a href="#" class="icon-link">
-          to Xxx
-          <svg class="bi"><use xlink:href="#chevron-right"/></svg>
-        </a>
       </div>
     </div>
   </div>
