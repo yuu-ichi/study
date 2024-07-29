@@ -5,7 +5,7 @@
   <?php echo $this->element('hedding', ["text" => "Home"]); ?>
 
   <div class="card text-bg-dark mb-4">
-    <?php echo $this->Html->image('hero.jpg', ['alt' => 'hero', 'class' => 'card-img img-fluid']); ?>
+    <?php echo $this->Html->image('home/hero.jpg', ['alt' => 'hero', 'class' => 'card-img img-fluid']); ?>
     <div class="card-img-overlay">
       <h2 class="card-title">Dashbord</h2>
       <p class="card-text">記事の作成・タグの追加をする管理画面を学習しつつ作成しています。</p>
@@ -56,7 +56,7 @@
   </div>
 
   <div class="mb-4">
-    <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">グラフ</h2>
+    <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">コンセプト</h2>
   </div>
   <div>
     <canvas id="myChart"></canvas>
