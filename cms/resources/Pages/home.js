@@ -46,8 +46,6 @@ function cartLineGraph() {
     for (let i = 0; i < 12; i++) {
         const date = addMonths(baseDate, i);
         const month = getMonth(date) + 1;
-        console.log(`test--`);
-        console.log(month);
         lineGraphDataLabels.push(month + "月");
     }
 

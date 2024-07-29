@@ -17632,8 +17632,6 @@ function cartLineGraph() {
     for (let i = 0; i < 12; i++) {
         const date = addMonths(baseDate, i);
         const month = getMonth(date) + 1;
-        console.log(`test--`);
-        console.log(month);
         lineGraphDataLabels.push(month + "月");
     }
 
@@ -17641,7 +17639,7 @@ function cartLineGraph() {
         labels: lineGraphDataLabels,
         datasets: [
             {
-                label: "Dataset 1",
+                label: "my posts",
                 data: {
                     "8月": 0,
                     "9月": 0,
@@ -17696,6 +17694,7 @@ function cartLineGraph() {
 })();
 
 function main() {
+    // TODO: 曜日
     const today = document.getElementById("today");
     today.setAttribute("text", format(new Date(), "'Today is a' eeee"));
 }
