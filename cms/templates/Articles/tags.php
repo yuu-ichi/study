@@ -1,7 +1,9 @@
-<h1>
-    Articles tagged with
-    <?= $this->Text->toList(h($tags), 'or') ?>
-</h1>
+<?php
+  $this->layout = 'default';
+?>
+
+<?php echo $this->element('hedding', ["text" => "記事に関連するタグ"]); ?>
+<?= $this->Text->toList(h($tags), 'or') ?>
 
 <section>
 <?php foreach ($articles as $article): ?>

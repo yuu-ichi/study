@@ -8,3 +8,6 @@ RUN apt update \
   && apt install -y libicu-dev \
   && docker-php-ext-install intl \
   && a2enmod rewrite
+
+# using bootstrap etc
+RUN apt install -y nodejs npm

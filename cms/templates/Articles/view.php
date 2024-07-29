@@ -1,5 +1,8 @@
-<!-- File: templates/Articles/view.php -->
+<?php
+  $this->layout = 'default';
+?>
 
+<?php echo $this->element('hedding', ["text" => "記事"]); ?>
 <h1><?= h($article->title) ?></h1>
 <p><?= h($article->body) ?></p>
 <p>

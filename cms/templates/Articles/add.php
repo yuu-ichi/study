@@ -1,4 +1,7 @@
-<h1>記事の追加</h1>
+<?php
+  $this->layout = 'default';
+?>
+<?php echo $this->element('hedding', ["text" => "記事の追加"]); ?>
 <?php
     echo $this->Form->create($article);
     echo $this->Form->control('user_id', ['type' => 'hidden', 'value' => 1]);
