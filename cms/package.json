@@ -14,7 +14,8 @@
     "author": "yuu-ichi",
     "license": "ISC",
     "dependencies": {
-        "chart.js": "^4.4.3"
+        "chart.js": "^4.4.3",
+        "date-fns": "^3.6.0"
     },
     "devDependencies": {
         "@rollup/plugin-commonjs": "^26.0.1",

@@ -13,6 +13,8 @@
     </div>
   </div>
 
+  <p id="today"></p>
+
   <div class="mb-4">
     <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">コンセプト</h2>
   </div>
@@ -56,10 +58,15 @@
   </div>
 
   <div class="mb-4">
-    <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">コンセプト</h2>
+    <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">ウェイト</h2>
   </div>
-  <div>
-    <canvas id="myChart"></canvas>
+  <div class="d-flex flex-row flex-wrap mb-3">
+    <div class="p-2">
+      <canvas id="chart-pie"></canvas>
+    </div>
+    <div class="p-2">
+      <canvas id="chart-line-graph"></canvas>
+    </div>
   </div>
 </div>
 

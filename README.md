@@ -41,6 +41,14 @@ bin/cake migrations status
 bin/cake migrations migrate
 ```
 
+## docker-commonds
+
+- js build
+
+```sh
+docker-compose exec cake-app npm run build
+```
+
 ## composer
 
 - 関連パッケージ:`composer suggests`
