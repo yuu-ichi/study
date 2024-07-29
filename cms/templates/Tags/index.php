@@ -4,7 +4,7 @@
 <div class="">
     <?php echo $this->element('hedding', ["text" => "タグの一覧"]); ?>
     <p>
-        <?= $this->Html->link(__('New Tag'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+        <?= $this->Html->link(__('タグの追加'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
     </p>
     <div class="">
         <table class="table table-hover">

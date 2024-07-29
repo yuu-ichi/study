@@ -7,20 +7,22 @@
   <div class="card text-bg-dark mb-4">
     <?php echo $this->Html->image('hero.jpg', ['alt' => 'hero', 'class' => 'card-img img-fluid']); ?>
     <div class="card-img-overlay">
-      <h5 class="card-title">Dashbord</h5>
+      <h2 class="card-title">Dashbord</h2>
       <p class="card-text">記事の作成・タグの追加をする管理画面を学習しつつ作成しています。</p>
       <p class="card-text"><small>現在チュートリアルを進め終わって、継続で勉強も兼ねて制作中....</small></p>
     </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="mb-4">
+    <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">コンセプト</h2>
+  </div>
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
     <div class="col">
       <div class="card">
         <?php echo $this->Html->image('home/coding.jpg', ['alt' => 'プログラミング', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
         <div class="card-body">
           <h5 class="card-title">プログラミング</h5>
-          <p class="card-text">TODO</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          <p class="card-text">勉強・学習したことについて</p>
         </div>
       </div>
     </div>
@@ -28,9 +30,8 @@
       <div class="card">
         <?php echo $this->Html->image('home/hobby.jpg', ['alt' => '趣味', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
         <div class="card-body">
-          <h5 class="card-title">趣味</h5>
-          <p class="card-text">TODO</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          <h5 class="card-title">ライフスタイル</h5>
+          <p class="card-text">生活をしている中での気付きについて</p>
         </div>
       </div>
     </div>
@@ -39,8 +40,7 @@
         <?php echo $this->Html->image('home/idea-talk.jpg', ['alt' => '雑談', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover;']); ?>
         <div class="card-body">
           <h5 class="card-title">雑談</h5>
-          <p class="card-text">TODO</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          <p class="card-text">最近感じたことや思ったことについて</p>
         </div>
       </div>
     </div>
@@ -49,13 +49,15 @@
         <?php echo $this->Html->image('home/running.jpg', ['alt' => 'ランニング', 'class' => 'card-img-top', 'style' => 'max-height: 240px; object-fit: cover; object-position: 0% 80%;']); ?>
         <div class="card-body">
           <h5 class="card-title">運動</h5>
-          <p class="card-text">TODO</p>
-          <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+          <p class="card-text">定期的に行っている運動について</p>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="mb-4">
+    <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">グラフ</h2>
+  </div>
   <div>
     <canvas id="myChart"></canvas>
   </div>
