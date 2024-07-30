@@ -10,10 +10,9 @@
       <h2 class="card-title">Dashbord</h2>
       <p class="card-text">記事の作成・タグの追加をする管理画面を学習しつつ作成しています。</p>
       <p class="card-text"><small>現在チュートリアルを進め終わって、継続で勉強も兼ねて制作中....</small></p>
+      <p id="today" class="card-text"></p>
     </div>
   </div>
-
-  <p id="today"></p>
 
   <div class="mb-4">
     <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">コンセプト</h2>
@@ -60,11 +59,11 @@
   <div class="mb-4">
     <h2 class="text-left fs-4 fw-bold pb-2 border-bottom">ウェイト</h2>
   </div>
-  <div class="d-flex flex-row flex-wrap mb-3">
-    <div class="p-2">
+  <div class="d-flex flex-row flex-wrap justify-content-center mb-3">
+    <div class="mx-auto p-8 cart-box">
       <canvas id="chart-pie"></canvas>
     </div>
-    <div class="p-2">
+    <div class="mx-auto p-8 cart-box">
       <canvas id="chart-line-graph"></canvas>
     </div>
   </div>

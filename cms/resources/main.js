@@ -1,10 +1,17 @@
 import "./Pages/home";
 import { format } from "date-fns";
 
-function main() {
-    // TODO: 曜日
+function todayText() {
     const today = document.getElementById("today");
-    today.setAttribute("text", format(new Date(), "'Today is a' eeee"));
+    today.textContent = format(new Date(), "'Today is a' eeee");
 }
+
+function main() {
+    todayText();
+}
+
+(function () {
+    main();
+})();
 
 export default main;

@@ -17666,6 +17666,15 @@ function cartLineGraph() {
         data: lineGraphData,
         options: {
             responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 30,
+                },
+                x: {},
+            },
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: "center",
@@ -17673,15 +17682,6 @@ function cartLineGraph() {
                 title: {
                     display: true,
                     text: "投稿の推移",
-                },
-            },
-        },
-        scales: {
-            y: {
-                max: 15,
-                min: 0,
-                ticks: {
-                    stepSize: 1,
                 },
             },
         },
@@ -17693,10 +17693,17 @@ function cartLineGraph() {
     cartLineGraph();
 })();
 
-function main() {
-    // TODO: 曜日
+function todayText() {
     const today = document.getElementById("today");
-    today.setAttribute("text", format(new Date(), "'Today is a' eeee"));
+    today.textContent = format(new Date(), "'Today is a' eeee");
 }
+
+function main() {
+    todayText();
+}
+
+(function () {
+    main();
+})();
 
 export { main as default };
