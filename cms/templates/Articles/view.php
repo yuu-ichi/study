@@ -11,4 +11,4 @@
 <p>
     <b>Tags:</b> <?= h($article->tag_string) ?>
 </p>
-<p><?= $this->Html->link('Edit', ['action' => 'edit', $article->slug]) ?></p>
+<p><?= $this->Html->link(__('編集'), ['action' => 'edit', $article->id], ['class' => 'btn btn-primary']) ?></p>

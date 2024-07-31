@@ -47,7 +47,7 @@ class ArticlePolicy
      * @param \App\Model\Entity\Article $article
      * @return bool
      */
-    public function canDelete(User $user, Article $article)
+    public function canDelete(Identity $user, Article $article)
     {
         return $this->isAuthor($user, $article);
     }
