@@ -80,6 +80,15 @@ function cartLineGraph() {
         data: lineGraphData,
         options: {
             responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 30,
+                },
+                x: {},
+            },
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: "center",
@@ -87,15 +96,6 @@ function cartLineGraph() {
                 title: {
                     display: true,
                     text: "投稿の推移",
-                },
-            },
-        },
-        scales: {
-            y: {
-                max: 15,
-                min: 0,
-                ticks: {
-                    stepSize: 1,
                 },
             },
         },
