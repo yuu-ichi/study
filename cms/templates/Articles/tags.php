@@ -11,7 +11,7 @@
         <h4>
             <?= $this->Html->link(
                 $article->title,
-                ['controller' => 'Articles', 'action' => 'view', $article->slug]
+                ['controller' => 'Articles', 'action' => 'view', $article->id]
             ) ?>
         </h4>
         <span><?= h($article->created) ?></span>

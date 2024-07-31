@@ -16,12 +16,12 @@ class ArticlesController extends AppController
         $this->set(compact('articles'));
     }
 
-    public function view($slug = null)
+    public function view($id = null)
     {
         $this->Authorization->skipAuthorization();
 
         $article = $this->Articles
-            ->findBySlug($slug)
+            ->findById($id)
             ->contain('Tags')
             ->firstOrFail();
         $this->set(compact('article'));
@@ -47,10 +47,10 @@ class ArticlesController extends AppController
         $this->set(compact('article', 'tags'));
     }
 
-    public function edit($slug)
+    public function edit($id)
     {
         $article = $this->Articles
-            ->findBySlug($slug)
+            ->findById($id)
             ->contain('Tags')
             ->firstOrFail();
         $this->Authorization->authorize($article);
@@ -70,11 +70,11 @@ class ArticlesController extends AppController
         $this->set(compact('article', 'tags'));
     }
 
-    public function delete($slug)
+    public function delete($id)
     {
         $this->request->allowMethod(['post', 'delete']);
 
-        $article = $this->Articles->findBySlug($slug)->firstOrFail();
+        $article = $this->Articles->findById($id)->firstOrFail();
         $this->Authorization->authorize($article);
         if ($this->Articles->delete($article)) {
             $this->Flash->success(__('The {0} article has been deleted.', $article->title));
